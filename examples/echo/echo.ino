@@ -16,8 +16,7 @@ void loop()
   //give some program stream instead of Serial, and all that will pop out of defined scratch
   //well mock that by just echoing
   while(stream.available()){
-    int c = stream.read();
-    stream.write((char)c);
+    stream.write(stream.read());
   }
 
   //we need to service the stream so it can check the characteristic for data and
