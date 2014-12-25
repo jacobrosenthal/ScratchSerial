@@ -2,7 +2,6 @@
 
 Arduino library for the [Punch Through LightBlue Bean](https://punchthrough.com/bean/). Turns Scratch Characteristics into a Serial port. Implements Punct Through's Scratch [Read](https://punchthrough.com/bean/the-arduino-reference/readscratchdata/) an [Write](https://punchthrough.com/bean/the-arduino-reference/setscratchdata/) API.
 
-
 ##Note1
 There is a pretty major limitation to using scratch characteristics. The data you write MUST change write to write in order to be seen as new. IE if you send "hello" twice in a row, only the first will be passed through!
 
@@ -26,6 +25,6 @@ stream.loop();
 Thats it. You can now .write or .read or pass your ScratchSerial object to any class that accepts a Serial object. Here well just echo it all back out.
 ```cpp
 while(stream.available()){
-stream.write(stream.read());
+  stream.write(stream.read());
 }
 ```
